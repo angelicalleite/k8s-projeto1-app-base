@@ -13,7 +13,7 @@ docker push angelicalleite/projeto-database:1.0
 
 echo "Criando serviços cluster ..........."
 
-kubectl apply -f ./services.yml
+kubectl apply -f ./service.yml
 
 echo "Criando deployments ..........."
 
