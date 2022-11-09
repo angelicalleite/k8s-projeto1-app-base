@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Criando imagens .........."
 
 docker build -t angelicalleite/projeto-backend:1.0 backend/.
@@ -7,3 +9,12 @@ echo "Realizando push das imagens ..........."
 
 docker push angelicalleite/projeto-backend:1.0
 docker push angelicalleite/projeto-database:1.0
+
+
+echo "Criando serviços cluster ..........."
+
+kubectl apply -f ./services.yml
+
+echo "Criando deployments ..........."
+
+kubectl apply -f ./deployment.yml
